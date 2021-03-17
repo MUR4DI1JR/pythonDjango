@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/contact_details.css' %}">
+	<title>Document</title>
+</head>
+<body>
+	<div class="user">
+		<div class="img-content">
+			<img src="{% static 'assets/img_avatar3.png' %}" alt="">
+		</div>
+		<div class="user-info">
+			<a href="{%url 'update_contact' contact.id%}">Редактировать</a>
+			<div class="user-text">
+				<div class="user-name">
+					<p>Имя/Фамалия</p>
+					<h1>{{contact.name}} {{contact.surname}}</h1>
+				</div>
+				<div class="user-date">
+					<p>Дата</p>
+					<h4>{{contact.date}}</p>
+				</div>
+				<div class="user-tel">
+					<p>Телефон номер</p>
+					<h4>{{contact.tel_number}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

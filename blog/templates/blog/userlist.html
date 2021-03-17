@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<title>Document</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h2>Список контактов</h2>
+    </div>
+  </header>
+  <div class="item">
+    <div class="item-content">
+      <div class="buttons">
+      <a href="create_user/">Добавить нового пользователя</a>
+    </div>
+    <div class="search-content">
+      <form action=".">
+            <input 
+              type="text"
+              placeholder="Введите имя или номер человека" 
+            >
+            <input type="submit" value="Найти">
+          </form>
+        </div>
+      </div>
+    </div>
+    
+	<div class="content">
+		{%for user in users%}
+	   <div class="center">
+  		<div class="property-card">
+  			 <a href="{% url 'contact_details' user.id %}">
+            <div class="property-image">
+              <div class="property-image-title">
+              </div>
+            </div>
+          </a>
+    		  <div class="property-description">
+      			<h5>{{user.surname}}</h5>
+      			<h5>{{user.name}}</h5>
+    		  </div>
+    		  <a href="{%url 'delete_contact' user.id%}">
+      			<div class="property-social-icons">
+      				удалить
+      			</div>
+    		  </a>
+  		</div>
+	 </div>
+	{%endfor%}
+	</div>
+	
+</body>
+</html>
