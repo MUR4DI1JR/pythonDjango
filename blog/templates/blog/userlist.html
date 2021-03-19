@@ -19,10 +19,11 @@
       <a href="create_user/">Добавить нового пользователя</a>
     </div>
     <div class="search-content">
-      <form action=".">
+      <form action="{% url 'user_list' %}">
             <input 
               type="text"
-              placeholder="Введите имя или номер человека" 
+              placeholder="Введите имя или номер человека"
+              name="search_user" 
             >
             <input type="submit" value="Найти">
           </form>

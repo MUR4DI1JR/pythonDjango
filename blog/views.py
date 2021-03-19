@@ -2,9 +2,17 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Contact
 from .forms import ContactForm
+from django.db.models import Q
 
 def home(request):
 	get_contact = Contact.objects.all()
+	search_user = request.GET.get('search_user', '')
+
+	if search_user:
+		get_contact = Contact.objects.filter(Q(name = search_user) | Q(surname = search_user))
+	else:
+		get_contact = Contact.objects.all()
+	
 	return render(request, 'blog/userlist.html', {'users': get_contact})
 
 def create_contact(request):
