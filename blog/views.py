@@ -9,7 +9,7 @@ def home(request):
 	search_user = request.GET.get('search_user', '')
 
 	if search_user:
-		get_contact = Contact.objects.filter(Q(name = search_user) | Q(surname = search_user))
+		get_contact = Contact.objects.filter(Q(name = search_user) | Q(surname = search_user) | Q(tel_number = search_user))
 	else:
 		get_contact = Contact.objects.all()
 	
