@@ -36,10 +36,10 @@ def update_contact(request, contact_id):
 	contact = get_object_or_404(Contact, id = contact_id)
 	form = ContactForm(instance = contact)
 	if request.method == 'POST':
-		form = ContactForm(request.POST, instance = post)
+		form = ContactForm(request.POST, instance = contact)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/' + contact_id)
+			return HttpResponseRedirect('/contact/' + contact_id)
 	context = {
 		'form' : form
 	}

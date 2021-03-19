@@ -1,15 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/create_contact.css' %}">
 	<title>Document</title>
 </head>
 <body>
-	<form action="." method="POST">
-		{%csrf_token%}
-		{{form.as_p}}
-		<input type="submit" value="send">
-	</form>
+	<div class="container">
+		<div class="element">
+			<h1>Update contact</h1>
+			<form action="." method="POST">
+				{%csrf_token%}
+				<p>Name</p>
+				{{form.name}}
+				<p>Surname</p>
+				{{form.surname}}
+				<p>Date</p>
+				{{form.date}}
+				<p>Telefon number</p>
+				{{form.tel_number}}
+				<div class="button">
+					<input type="submit" value="send">
+				</div>
+			</form>
+		</div>
+	</div>
+	
 </body>
 </html>
