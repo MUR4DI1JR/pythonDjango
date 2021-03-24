@@ -1,32 +1,44 @@
+{% extends 'main.html' %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="{% static 'css/create_contact.css' %}">
-	<title>Document</title>
-</head>
-<body>
 	<div class="container">
 		<div class="element">
 			<h1>Add contact</h1>
 			<form action="." method="POST">
 				{%csrf_token%}
 				<p>Name</p>
+				{% if form.name.errors %}
+					{% for error in form.name.errors %}
+						<h5>{{error|escape}}</h5>
+					{% endfor %}
+				{% endif %}
 				<input type="text" name="name">
 				<p>Surname</p>
+				{% if form.surname.errors %}
+					{% for error in form.surname.errors %}
+						<h5>{{error|escape}}</h5>
+					{% endfor %}
+				{% endif %}
 				<input type="text" name="surname">
 				<p>Date</p>
+				{% if form.date.errors %}
+					{% for error in form.date.errors %}
+						<h5>{{error|escape}}</h5>
+					{% endfor %}
+				{% endif %}
 				<input type="text" name="date">
 				<p>Telefon number</p>
+				{% if form.tel_number.errors %}
+					{% for error in form.tel_number.errors %}
+						<h5>{{error|escape}}</h5>
+					{% endfor %}
+				{% endif %}
 				<input type="text" name="tel_number">
 				<div class="button">
-					<input type="submit" value="send">
+					<input type="submit" value="add contact">
 				</div>
 			</form>
 		</div>
 	</div>
-	
-</body>
-</html>
+{% endblock content %}
