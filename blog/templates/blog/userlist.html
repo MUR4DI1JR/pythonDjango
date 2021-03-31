@@ -1,7 +1,5 @@
 {% extends 'main.html' %}
 {% block content %}
-{% load static %}
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
   <header>
     <div class="logo">
       <h2>Список контактов</h2>
@@ -14,11 +12,15 @@
     </div>
     <div class="search-content">
       <form action="{% url 'user_list' %}">
+          <div class="input">
             <input 
               type="text"
               placeholder="Введите имя или номер человека"
-              name="search_user" 
+              name="search_user"
+              value="{{ search_user }}"
             >
+            <a href="/">сброс</a>
+            </div>
             <input type="submit" value="Найти">
           </form>
         </div>

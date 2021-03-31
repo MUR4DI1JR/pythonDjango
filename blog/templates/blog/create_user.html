@@ -1,9 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
-{% load static %}
-	<link rel="stylesheet" href="{% static 'css/create_contact.css' %}">
-	<div class="container">
-		<div class="element">
+	<div class="create_container">
+		<div class="create_element">
 			<h1>Add contact</h1>
 			<form action="." method="POST">
 				{%csrf_token%}
@@ -35,7 +33,7 @@
 					{% endfor %}
 				{% endif %}
 				<input type="text" name="tel_number">
-				<div class="button">
+				<div class="create_button">
 					<input type="submit" value="add contact">
 				</div>
 			</form>

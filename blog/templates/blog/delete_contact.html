@@ -1,14 +1,12 @@
 {% extends 'main.html' %}
 {% block content %}
-{% load static %}
-	<link rel="stylesheet" href="{% static 'css/delete_contact.css' %}">
-	<div class="container">
-		<div class="element">
+	<div class="delete_container">
+		<div class="delete_element">
 			<h3>Вы на странице удаление юзера</h3>
 			<p>удалить юзера <q>{{contact.name}}</q></p>
 			<form action="" method="POST">
 				{%csrf_token%}
-				<div class="button">
+				<div class="delete_button">
 					<input type="submit" value="да">
 					<a href="/">нет</a>	
 				</div>

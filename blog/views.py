@@ -13,7 +13,7 @@ def home(request):
 	else:
 		get_contact = Contact.objects.all()
 	
-	return render(request, 'blog/userlist.html', {'users': get_contact})
+	return render(request, 'blog/userlist.html', {'users': get_contact, 'search_user': search_user})
 
 def create_contact(request):
 	form = ContactForm(request.POST or None)

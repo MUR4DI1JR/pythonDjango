@@ -59,19 +59,20 @@ header
   font-weight: bold;
   text-decoration: none;
 }
-/*.search-content{
+.search-content form{
+  display: flex;
   width: 100%;
 }
-*/
+
 .search-content input{
   margin: 8px 0;
   outline: none;
 }
 .search-content input[type="text"]{
-  width: 350px;
+  width: 100%;
+  background: none;
   padding: 10px 5px;
-  border: 2px solid #000;
-  border-radius: 5px;
+  border: none;
 }
 .search-content input[type="submit"]{
   padding: 10px 35px;
@@ -185,4 +186,183 @@ header
 {
   background-color: red;
   cursor:pointer;
+}
+.input {
+  width: 315px;
+  margin-right: 25px;
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+.input a{
+  color: #fff;
+  margin: 10px 5px;
+  padding: 5px;
+  background: green;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+/* update_block */
+.update_element input[type="text"]{
+	border: none;
+	border-bottom:1px solid #000;
+	outline: none;
+	background: none;
+	width: 100%;
+}
+.update_container{
+	display: grid;
+}
+.update_element{
+	width: 25%;
+	justify-self: center;
+	align-self: center;
+	background: lightblue;
+	padding: 25px;
+	border-radius: 10px;
+}
+.update_element h1{
+	text-align: center;
+}
+.update_button{
+	text-align: center;
+}
+.update_button input{
+	width: 25%;
+	margin: 25px 0 10px 0;
+	text-transform: uppercase;
+	background: green;
+	border: none;
+	padding: 10px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 22px;
+	border-radius: 10px;
+}
+.update_button input:hover{
+	cursor: pointer;
+}
+
+/* delete_block */
+.delete_container{
+	display: grid;
+}
+.delete_element{
+	width: 25%;
+	justify-self: center;
+	align-self: center;
+	background: lightblue;
+	padding: 25px;
+	border-radius: 10px;
+	text-align: center;
+}
+.delete_button{
+	margin: 25px 0 10px 0;
+}
+.delete_button input{
+	color: #fff;
+	background: red;
+	outline: none;
+	font-size: 18px;
+	border: none;
+	padding: 10px 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-radius: 10px;
+	margin: 5px 10px;
+}
+.delete_button input:hover{
+	cursor: pointer;
+}
+.delete_button a{
+	text-decoration: none;
+	color: #fff;
+	background: green;
+	outline: none;
+	font-size: 18px;
+	border: none;
+	padding: 10px 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-radius: 10px;
+	margin: 5px 10px;
+}
+
+/* create_block */
+.create_element input[type="text"]{
+	border: none;
+	border-bottom:1px solid #000;
+	outline: none;
+	background: none;
+	width: 100%;
+}
+.create_container{
+	display: grid;
+}
+.create_element{
+	width: 25%;
+	justify-self: center;
+	align-self: center;
+	background: lightblue;
+	padding: 25px;
+	border-radius: 10px;
+}
+.create_element h1{
+	text-align: center;
+}
+.create_element h5{
+	color: red;
+}
+.create_button{
+	text-align: center;
+}
+.create_button input{
+	width: 30%;
+	margin: 25px 0 10px 0;
+	text-transform: uppercase;
+	background: green;
+	border: none;
+	padding: 10px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 22px;
+	border-radius: 10px;
+	outline: none;
+}
+.create_button input:hover{
+	cursor: pointer;
+}
+
+/* contact_details_block */
+.det_user{
+	padding: 5px;
+	display: flex;
+}
+.det_user-info{
+	width: 30%;
+	text-align: end;
+	margin-left: 10px;
+}
+.det_user-info a{
+	text-decoration: none;
+	background: green;
+	color: #fff;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.det_user-text {
+	text-align: start;
+}
+.det_user-text p{
+	margin: 0;
+	color: gray;
+}
+.det_user-text h4{
+	margin: 5px 0;
+}
+.det_user-name h1{
+	margin: 0;
 }

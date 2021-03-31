@@ -1,9 +1,7 @@
 {% extends 'main.html' %}
 {% block content %}
-{% load static %}
-	<link rel="stylesheet" href="{% static 'css/create_contact.css' %}">
-	<div class="container">
-		<div class="element">
+	<div class="update_container">
+		<div class="update_element">
 			<h1>Update contact</h1>
 			<form action="." method="POST">
 				{%csrf_token%}
@@ -15,7 +13,7 @@
 				{{form.date}}
 				<p>Telefon number</p>
 				{{form.tel_number}}
-				<div class="button">
+				<div class="update_button">
 					<input type="submit" value="send">
 				</div>
 			</form>

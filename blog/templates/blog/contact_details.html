@@ -1,35 +1,26 @@
+{% extends 'main.html' %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="{% static 'css/contact_details.css' %}">
-	<title>Document</title>
-</head>
-<body>
-	<div class="user">
-		<div class="img-content">
+	<div class="det_user">
+		<div class="det_img-content">
 			<img src="{% static 'assets/img_avatar3.png' %}" alt="">
 		</div>
-		<div class="user-info">
+		<div class="det_user-info">
 			<a href="{%url 'update_contact' contact.id%}">Редактировать</a>
-			<div class="user-text">
-				<div class="user-name">
+			<div class="det_user-text">
+				<div class="det_user-name">
 					<p>Имя/Фамалия</p>
 					<h1>{{contact.name}} {{contact.surname}}</h1>
 				</div>
-				<div class="user-date">
+				<div class="det_user-date">
 					<p>Дата</p>
 					<h4>{{contact.date}}</p>
 				</div>
-				<div class="user-tel">
+				<div class="det_user-tel">
 					<p>Телефон номер</p>
 					<h4>{{contact.tel_number}}</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-</body>
-</html>
+{% endblock content %}
